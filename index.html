@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onur Zorlu | Matematik Özel Ders - LGS & YKS</title>
+    <meta name="description" content="Beylikdüzü, Esenyurt, Bahçeşehir ve İstanbul genelinde yüz yüze ve online matematik özel ders. LGS, TYT, AYT yeni nesil soru teknikleri ve öğrenci koçluğu.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #10b981;
+            --bg-light: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 80px;
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Bar */
+        .top-nav {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: #ffffff;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20ba5a;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid #dbeafe;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: var(--secondary);
+            line-height: 1.2;
+            margin-bottom: 18px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 30px;
+        }
+
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            padding: 8px 18px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .stars {
+            color: #f59e0b;
+            font-weight: bold;
+        }
+
+        /* Services Grid */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #eff6ff;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Features List */
+        .features-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--border);
+            margin: 40px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-item h4 {
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Locations */
+        .locations-box {
+            background: #0f172a;
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .locations-box h3 {
+            font-size: 1.75rem;
+            margin-bottom: 12px;
+        }
+
+        .locations-box p {
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            border: 1px solid #334155;
+        }
+
+        /* Contact Section */
+        .contact-card {
+            background: #ffffff;
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.1);
+        }
+
+        .contact-card h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+
+        .phone-display {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 20px 0;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .phone-display:hover {
+            text-decoration: underline;
+        }
+
+        /* Fixed Mobile Bar */
+        .mobile-bottom-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            padding: 12px 16px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.08);
+            z-index: 100;
+            border-top: 1px solid var(--border);
+        }
+
+        .mobile-bottom-bar .btn {
+            flex: 1;
+            justify-content: center;
+            padding: 12px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .phone-display {
+                font-size: 1.5rem;
+            }
+            .nav-cta {
+                display: none;
+            }
+            .mobile-bottom-bar {
+                display: flex;
+                gap: 10px;
+            }
+        }
+    </style>
+    <!-- Structured Data for Google Ads & SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Onur Zorlu | Matematik Özel Ders",
+      "telephone": "+905355910390",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gökevler Mahallesi, Bahçesehir Sitesi, 564 Sokak",
+        "addressLocality": "Esenyurt",
+        "addressRegion": "İstanbul",
+        "postalCode": "34522",
+        "addressCountry": "TR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "31"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="top-nav">
+        <div class="container nav-content">
+            <div class="logo-text">
+                📐 Onur Zorlu <span>Matematik</span>
+            </div>
+            <div class="nav-cta">
+                <a href="tel:05355910390" class="btn btn-primary">📞 0535 591 03 90</a>
+                <a href="https://wa.me/905355910390?text=Merhaba%2C%20matematik%20%C3%B6zel%20dersi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-whatsapp">💬 WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">🚀 2026-2027 Eğitim Dönemi Kayıtları Açık</div>
+            <h1>Hedefe Odaklı, Yeni Nesil<br>Birebir Matematik Eğitimi</h1>
+            <p>Ezberden uzak, analitik düşünme ve yeni nesil soru mantığı odaklı birebir eğitim. Mühendislik altyapısıyla matematiği temelden kavrayın.</p>
+            
+            <div class="rating-badge">
+                <span class="stars">★★★★★</span>
+                <strong>5.0 / 5.0</strong>
+                <span style="color: var(--text-muted);">(Google Doğrulanmış 31+ Veli ve Öğrenci Yorumu)</span>
+            </div>
+
+            <div>
+                <a href="https://wa.me/905355910390?text=Merhaba%2C%20matematik%20%C3%B6zel%20dersi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-whatsapp" style="padding: 14px 28px; font-size: 1.05rem; margin-right: 10px;">💬 WhatsApp'tan Bilgi Alın</a>
+                <a href="tel:05355910390" class="btn btn-primary" style="padding: 14px 28px; font-size: 1.05rem;">📞 Hemen Arayın</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="container">
+        <div class="section-title">
+            <h2>Ders Programları ve Hizmetler</h2>
+            <p>Öğrencinin seviyesine ve hedefine özel hazırlanmış çalışma planları</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>LGS Matematik & Yeni Nesil</h3>
+                <p>8. sınıf öğrencilerine yönelik mantık, muhakeme ve yeni nesil soru çözümü stratejileri. Hedef odaklı sınav hazırlığı.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>YKS (TYT - AYT) Matematik</h3>
+                <p>11, 12. sınıf ve mezun gruplarına temelden ileri düzeye TYT ve AYT hazırlık. Zaman yönetimi ve net artırma teknikleri.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📐</div>
+                <h3>Ortaokul Destek (5, 6, 7. Sınıf)</h3>
+                <p>Okul müfredatına tam uyum, yazılı sınavlara hazırlık ve sağlam bir temel inşa ederek matematik ön yargısını kırma.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📝</div>
+                <h3>Lise Destek (9 & 10. Sınıf)</h3>
+                <p>Lise matematiğinin zorlu konularını mantığıyla kavrama, okul sınavlarında yüksek başarı ve üniversiteye erken temel.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Birebir Canlı Online Ders</h3>
+                <p>Grafik tablet ile interaktif, PDF kaynak destekli, Türkiye'nin her yerinden kesintisiz birebir online eğitim imkanı.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Öğrenci Koçluğu & Takip</h3>
+                <p>Haftalık kişiye özel ödev takibi, eksik kazanım raporlaması ve veliye düzenli gelişim geri bildirim süreci.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work -->
+    <section class="container">
+        <div class="features-box">
+            <div class="section-title" style="margin-top: 0;">
+                <h2>Nasıl Bir Yol İzliyoruz?</h2>
+                <p>Disiplinli ve planlı bir eğitim metodolojisi</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>🔍 1. Seviye Tespiti</h4>
+                    <p>İlk derste öğrencinin güçlü yönleri ve temel kazanım eksikleri tam olarak belirlenir.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📋 2. Kişisel Kaynak Planı</h4>
+                    <p>Öğrencinin seviyesine en uygun başlangıç ve yeni nesil soru bankaları seçilir.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>✏️ 3. Aktif Soru Çözümü</h4>
+                    <p>Öğrenci pasif dinleyici olmaz; kalemi eline alarak formüllerin mantığını kavrar.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>👨‍👩‍👦 4. Veli Bilgilendirmesi</h4>
+                    <p>Düzenli ödev kontrolü yapılır ve veli süreç hakkında kesintisiz bilgilendirilir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section class="container">
+        <div class="locations-box">
+            <h3>Ders Formatı & Hizmet Bölgeleri</h3>
+            <p>Yüz yüze dersler öğrencinin evinde veya sessiz çalışma ortamlarında; online dersler ise grafik tablet ile canlı olarak gerçekleştirilir.</p>
+            <div class="tags">
+                <span class="tag">Beylikdüzü</span>
+                <span class="tag">Esenyurt</span>
+                <span class="tag">Bahçeşehir</span>
+                <span class="tag">Büyükçekmece</span>
+                <span class="tag">Avcılar</span>
+                <span class="tag">Başakşehir</span>
+                <span class="tag">Online (Tüm Türkiye)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="container" style="margin-bottom: 60px;">
+        <div class="contact-card">
+            <h2>Ders Planlaması ve Detaylı Bilgi</h2>
+            <p style="color: var(--text-muted); max-width: 550px; margin: 0 auto;">
+                Öğrencinizin hedeflerini konuşmak ve seviyesine uygun ders takvimi oluşturmak için 7/24 iletişime geçebilirsiniz.
+            </p>
+            <div>
+                <a href="tel:05355910390" class="phone-display">📞 0535 591 03 90</a>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">
+                Adres: Gökevler Mah. Bahçeşehir Sit. 564. Sk. Esenyurt / İstanbul
+            </p>
+            <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                <a href="https://wa.me/905355910390?text=Merhaba%2C%20matematik%20%C3%B6zel%20dersi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-whatsapp" style="padding: 12px 28px; font-size: 1rem;">
+                    💬 WhatsApp ile Hemen Yazın
+                </a>
+                <a href="tel:05355910390" class="btn btn-primary" style="padding: 12px 28px; font-size: 1rem;">
+                    📞 Doğrudan Arayın
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Fixed Action Bar -->
+    <div class="mobile-bottom-bar">
+        <a href="tel:05355910390" class="btn btn-primary">📞 Hemen Ara</a>
+        <a href="https://wa.me/905355910390?text=Merhaba%2C%20matematik%20%C3%B6zel%20dersi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-whatsapp">💬 WhatsApp</a>
+    </div>
+
+</body>
+</html>
