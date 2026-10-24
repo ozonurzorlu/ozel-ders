@@ -291,26 +291,26 @@
         }
 
 
-        /* Google review carousel */
+        /* Continuous Google review strip */
         .reviews-section { padding: 10px 0 30px; }
         .reviews-heading { text-align: center; margin: 38px 0 22px; }
         .reviews-heading h2 { color: var(--secondary); font-size: 2rem; margin-bottom: 8px; }
         .reviews-heading p { color: var(--text-muted); }
         .reviews-viewport { overflow: hidden; border-radius: 18px; }
-        .reviews-track { display: flex; transition: transform 450ms ease; }
-        .review-slide { flex: 0 0 100%; padding: 8px; }
-        .review-card { max-width: 760px; min-height: 225px; margin: 0 auto; padding: 30px; background: #fff; border: 1px solid var(--border); border-radius: 18px; box-shadow: 0 8px 24px rgba(15, 23, 42, .06); display: flex; flex-direction: column; justify-content: space-between; }
-        .review-card blockquote { color: var(--text-main); font-size: 1.05rem; line-height: 1.8; }
-        .review-meta { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-top: 24px; }
-        .review-author { font-weight: 700; color: var(--secondary); }
-        .review-stars { color: #f59e0b; letter-spacing: 2px; }
-        .review-controls { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 18px; }
-        .review-controls button { border: 1px solid var(--border); background: white; border-radius: 999px; padding: 9px 16px; color: var(--secondary); font: inherit; font-weight: 700; cursor: pointer; }
-        .review-controls button:hover { border-color: var(--primary); color: var(--primary); }
-        .review-position { color: var(--text-muted); font-size: .9rem; min-width: 48px; text-align: center; }
+        .reviews-track { display: flex; width: max-content; animation: review-scroll 58s linear infinite; will-change: transform; }
+        .reviews-group { display: flex; flex: none; align-items: stretch; gap: 20px; padding-right: 20px; }
+        .review-slide { flex: 0 0 min(360px, 82vw); padding: 8px 0; }
+        .review-card { height: 100%; min-height: 230px; padding: 26px; background: #fff; border: 1px solid var(--border); border-radius: 18px; box-shadow: 0 8px 24px rgba(15, 23, 42, .06); display: flex; flex-direction: column; justify-content: space-between; }
+        .review-card blockquote { color: var(--text-main); font-size: 1rem; line-height: 1.75; }
+        .review-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 22px; }
+        .review-author { font-weight: 700; color: var(--secondary); font-size: .9rem; }
+        .review-stars { color: #f59e0b; letter-spacing: 2px; white-space: nowrap; }
+        .reviews-viewport:hover .reviews-track,
+        .reviews-viewport:focus-within .reviews-track { animation-play-state: paused; }
         .reviews-source { text-align: center; margin-top: 12px; }
         .reviews-source a { color: var(--primary); font-weight: 600; }
-        @media (prefers-reduced-motion: reduce) { .reviews-track { transition: none; } }
+        @keyframes review-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        @media (prefers-reduced-motion: reduce) { .reviews-track { animation: none; } }
 
         /* Contact Section */
         .contact-card {
@@ -523,34 +523,37 @@
     <section class="container reviews-section" aria-labelledby="reviews-title">
         <div class="reviews-heading">
             <h2 id="reviews-title">Öğrenci ve Velilerden Yorumlar</h2>
-            <p>Google'daki 39 yorum arasından seçilmiş gerçek değerlendirmeler</p>
+            <p>Google'daki 39 yorum arasından seçilmiş değerlendirmeler</p>
         </div>
-        <div class="reviews-viewport" aria-live="polite">
+        <div class="reviews-viewport" aria-label="Google yorumları; üzerine gelince kayan yorumlar durur">
             <div class="reviews-track" id="reviews-track">
-                <article class="review-slide">
-                    <div class="review-card">
+                <div class="reviews-group">
+                    <article class="review-slide"><div class="review-card">
                         <blockquote>“Matematiğe karşı önyargılarımı kırmamda gerçekten çok büyük katkısı oldu. Sadece ders anlatan bir öğretmen değil, aynı zamanda öğrencisini motive eden ve destekleyen biri. Emeği ve sabrı için çok teşekkür ederim, gönül rahatlığıyla tavsiye ederim.”</blockquote>
                         <div class="review-meta"><span class="review-author">Gökçe Çamur · Google yorumu</span><span class="review-stars" aria-label="5 yıldız">★★★★★</span></div>
-                    </div>
-                </article>
-                <article class="review-slide">
-                    <div class="review-card">
+                    </div></article>
+                    <article class="review-slide"><div class="review-card">
                         <blockquote>“Kendisinden matematik konusunda destek aldım. Konuları anlaşılır ve sabırlı bir şekilde anlatıyor, anlamadığım yerlerde farklı yöntemlerle açıklamaya çalışıyor. Derslere düzenli ve özenli yaklaşması da benim için önemliydi. Matematik dersi almak isteyenlere gönül rahatlığıyla tavsiye edebilirim.”</blockquote>
                         <div class="review-meta"><span class="review-author">Ayşe Işık · Google yorumu</span><span class="review-stars" aria-label="5 yıldız">★★★★★</span></div>
-                    </div>
-                </article>
-                <article class="review-slide">
-                    <div class="review-card">
+                    </div></article>
+                    <article class="review-slide"><div class="review-card">
                         <blockquote>“Oğlumun lisedeki matematik notları epey düşüktü. Onur Bey'le derslere başladıktan sonra okul sınavlarında ciddi bir toparlanma oldu. Anlamadığı yerleri sabırla tekrar tekrar anlatıyor, çok memnunuz.”</blockquote>
                         <div class="review-meta"><span class="review-author">İsmail Yıldız · Google yorumu</span><span class="review-stars" aria-label="5 yıldız">★★★★★</span></div>
-                    </div>
-                </article>
+                    </div></article>
+                    <article class="review-slide"><div class="review-card">
+                        <blockquote>“Oğlumun 8. sınıf LGS hazırlık sürecinde Beylikdüzü’nde iyi bir matematik özel ders ararken Onur Hoca ile karşılaştık. Özellikle yeni nesil mantık ve muhakeme sorularında oğlumun ön yargısını kırdı…”</blockquote>
+                        <div class="review-meta"><span class="review-author">Aybars Göktürk · Google yorumu</span><span class="review-stars" aria-label="5 yıldız">★★★★★</span></div>
+                    </div></article>
+                    <article class="review-slide"><div class="review-card">
+                        <blockquote>“KPSS için matematik özel derse ihtiyacım vardı. Araştırmalarım sonucunda burayı tercih ettim. Yıllardır matematikte çok zorlandığım için sürekli ilerleyemeyip sar başa yaptığım konuları eğlenerek ve akılda kalıcı bir şekilde anlayarak…”</blockquote>
+                        <div class="review-meta"><span class="review-author">Nur Melek Sokur · Google yorumu</span><span class="review-stars" aria-label="5 yıldız">★★★★★</span></div>
+                    </div></article>
+                    <article class="review-slide"><div class="review-card">
+                        <blockquote>“Kız kardeşimin üniversite sınavı için matematik dersinde destek verdi Onur hocamız. Dersler çok verimli ve anlaşılırdı. Üniversiteye hazıran öğrencilerimiz için yararlı olacağını düşünüyorum.”</blockquote>
+                        <div class="review-meta"><span class="review-author">Sıla Tuğçe Çifçi · Google yorumu</span><span class="review-stars" aria-label="5 yıldız">★★★★★</span></div>
+                    </div></article>
+                </div>
             </div>
-        </div>
-        <div class="review-controls" aria-label="Yorum kaydırma kontrolleri">
-            <button type="button" id="review-prev" aria-label="Önceki yorum">←</button>
-            <span class="review-position" id="review-position">1 / 3</span>
-            <button type="button" id="review-next" aria-label="Sonraki yorum">→</button>
         </div>
         <p class="reviews-source"><a href="https://share.google/tTUndQIooHWI3WWeb" target="_blank" rel="noopener noreferrer">Google'daki tüm yorumları görüntüle</a></p>
     </section>
@@ -588,30 +591,24 @@
 
     <script>
         (() => {
-            const track = document.getElementById('reviews-track');
-            const slides = Array.from(track.children);
-            const position = document.getElementById('review-position');
             const viewport = document.querySelector('.reviews-viewport');
-            let current = 0;
-            let timer;
-            const show = (index) => {
-                current = (index + slides.length) % slides.length;
-                track.style.transform = `translateX(-${current * 100}%)`;
-                position.textContent = `${current + 1} / ${slides.length}`;
-            };
-            const start = () => {
-                window.clearInterval(timer);
-                if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                    timer = window.setInterval(() => show(current + 1), 6500);
-                }
-            };
-            document.getElementById('review-prev').addEventListener('click', () => { show(current - 1); start(); });
-            document.getElementById('review-next').addEventListener('click', () => { show(current + 1); start(); });
-            viewport.addEventListener('mouseenter', () => window.clearInterval(timer));
-            viewport.addEventListener('mouseleave', start);
-            viewport.addEventListener('focusin', () => window.clearInterval(timer));
-            viewport.addEventListener('focusout', start);
-            start();
+            const track = document.getElementById('reviews-track');
+            const firstGroup = track && track.querySelector('.reviews-group');
+            if (!viewport || !track || !firstGroup) return;
+            const copy = firstGroup.cloneNode(true);
+            copy.setAttribute('aria-hidden', 'true');
+            copy.querySelectorAll('a, button, [tabindex]').forEach((el) => el.setAttribute('tabindex', '-1'));
+            track.appendChild(copy);
+            const pause = () => { track.style.animationPlayState = 'paused'; };
+            const resume = () => { track.style.animationPlayState = ''; };
+            viewport.addEventListener('mouseenter', pause);
+            viewport.addEventListener('mouseleave', resume);
+            viewport.addEventListener('focusin', pause);
+            viewport.addEventListener('focusout', (event) => {
+                if (!viewport.contains(event.relatedTarget)) resume();
+            });
+            viewport.addEventListener('touchstart', pause, { passive: true });
+            viewport.addEventListener('touchend', resume, { passive: true });
         })();
     </script>
 </body>
