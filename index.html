@@ -81,6 +81,17 @@
 @media(min-width:681px){.hero-message{bottom:clamp(70px,9vh,110px)}}
 @media(max-width:680px){.hero-message{bottom:10px}}
 </style>
+<style>
+.hero-equations{position:absolute;z-index:0;inset:0;overflow:hidden;pointer-events:none;user-select:none}
+.hero-equations span{position:absolute;color:#fff;opacity:.075;font:italic 600 clamp(.82rem,1.25vw,1.08rem)/1.4 var(--serif);letter-spacing:.02em;white-space:nowrap;text-shadow:0 0 24px #a9c6e822}
+.hero-equations--one{left:39%;top:40%;width:220px;height:175px;transform:rotate(-7deg)}
+.hero-equations--one span:first-child{top:8px;left:0}
+.hero-equations--one span:last-child{right:0;bottom:16px}
+.hero-equations--two{right:3%;top:49%;width:205px;height:180px;transform:rotate(6deg);text-align:right}
+.hero-equations--two span:first-child{top:12px;right:0}
+.hero-equations--two span:last-child{bottom:12px;left:0}
+@media(max-width:680px){.hero-equations--one{left:3%;top:44%;width:165px}.hero-equations--two{right:2%;top:55%;width:150px}.hero-equations span{font-size:.76rem;opacity:.055}}
+</style>
 </head>
 <body>
 <header class="topbar"><nav class="wrap nav" aria-label="Ana menü">
@@ -90,7 +101,7 @@
 
 </nav></header>
 <main id="top">
-<section class="hero"><div class="hero-backdrop-name" id="hero-cycle-title" aria-hidden="true">ONUR ZORLU</div><div class="wrap hero-inner"><div class="hero-message">
+<section class="hero"><div class="hero-backdrop-name" id="hero-cycle-title" aria-hidden="true">ONUR ZORLU</div><div class="hero-equations hero-equations--one" aria-hidden="true"><span>f(x) = x² − 4x + 3</span><span>√(a² + b²)</span></div><div class="hero-equations hero-equations--two" aria-hidden="true"><span>a² + b² = c²</span><span>∑ (2n + 1)</span></div><div class="wrap hero-inner"><div class="hero-message">
 <div class="eyebrow">LGS · TYT · AYT · Ortaokul ve lise</div>
 <h1>Matematiğin<br>mantığını <em>keşfet.</em></h1>
 <div class="academic-badge" aria-label="Yıldız Teknik Üniversitesi, Bilgisayar Mühendisliği"><span class="academic-seal" aria-hidden="true"><img src="assets/ytu-seal.png" alt="" width="2179" height="2179"></span><span class="academic-copy"><small>Yıldız Teknik Üniversitesi</small><strong>Bilgisayar Mühendisliği</strong></span></div>
