@@ -92,6 +92,21 @@
 .hero-equations--two span:last-child{bottom:12px;left:0}
 @media(max-width:680px){.hero-equations--one{left:3%;top:44%;width:165px}.hero-equations--two{right:2%;top:55%;width:150px}.hero-equations span{font-size:.76rem;opacity:.055}}
 </style>
+<style id="premium-topbar">
+.topbar{background:linear-gradient(180deg,#0c142bea,#111a34e8);border-bottom:1px solid #e1bd7255;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 12px 34px #050a1638}
+.topbar .nav{width:min(1600px,calc(100% - 64px));min-height:88px;padding-inline:20px;border-bottom:0}
+.brand{gap:14px;font-size:1.04rem;letter-spacing:-.045em}
+.brand-monogram{width:46px;height:46px;border-width:1.5px;background:linear-gradient(145deg,#ffffff18,#ffffff04);box-shadow:0 0 0 4px #e1bd7210,0 0 26px #e1bd7226;font-size:.78rem}
+.brand small{margin-top:4px;color:#ffffffa8;font-size:.64rem;letter-spacing:.16em}
+.nav-links{gap:5px;padding:5px;border:1px solid #ffffff1c;border-radius:999px;background:#ffffff09;box-shadow:inset 0 1px 0 #ffffff12,0 8px 20px #050a161a}
+.nav-links a{padding:12px 14px;border-radius:999px;color:#ffffffd9;font-size:.84rem;letter-spacing:.005em;transition:color .2s,background .2s,transform .2s}
+.nav-links a:after{display:none}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--navy);background:linear-gradient(115deg,#f1d28a,#e1bd72);transform:translateY(-1px);outline:none}
+.menu-toggle{padding:10px 16px;border-color:#e1bd7280;color:var(--gold);background:#ffffff08;font-weight:800;transition:background .2s,color .2s}
+.menu-toggle:hover,.menu-toggle:focus-visible{color:var(--navy);background:var(--gold);outline:none}
+@media(max-width:900px) and (min-width:681px){.topbar .nav{width:calc(100% - 36px);padding-inline:8px}.brand{gap:10px;font-size:.94rem}.brand-monogram{width:42px;height:42px}.brand small{font-size:.58rem}.nav-links{gap:2px;padding:4px}.nav-links a{padding:10px 9px;font-size:.75rem}}
+@media(max-width:680px){.topbar .nav{width:min(100% - 34px,540px);min-height:72px;padding-inline:0}.brand{gap:10px;font-size:.98rem}.brand-monogram{width:42px;height:42px}.brand small{font-size:.58rem}.menu-toggle{padding:9px 14px}.nav-links{top:72px;left:0;right:0;gap:3px;padding:12px 18px 18px;flex-direction:column;align-items:stretch;border:1px solid #e1bd7245;border-top:0;border-radius:0 0 18px 18px;background:linear-gradient(160deg,#192644f7,#111a34f7);box-shadow:0 20px 36px #050a1648}.nav-links a{padding:13px 14px;border-radius:10px;border-bottom:1px solid #ffffff12;font-size:.86rem}.nav-links a:hover,.nav-links a:focus-visible{color:var(--gold);background:#ffffff0c;transform:none}.nav-links.open{display:flex}}
+</style>
 </head>
 <body>
 <header class="topbar"><nav class="wrap nav" aria-label="Ana menü">
